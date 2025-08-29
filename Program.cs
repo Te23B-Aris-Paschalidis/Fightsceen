@@ -5,7 +5,25 @@
 static void Fight()
 
 {
+    class Player {
+        
+    
+    int lvl = 1;
+    int xp = 0;
 
+
+    void ADDXP(int amount)
+    {
+        xp += amount;
+        if (xp >= 100)
+        {
+            lvl++;
+            xp = 0;
+            Console.WriteLine($"Leveld up! Ur now level{lvl}");
+        }
+
+    }
+    }
     int p1Hp = 100;
     int p2Hp = 130;
 
@@ -20,7 +38,7 @@ static void Fight()
         p2Hp -= Random.Shared.Next(10, 40); // Alex slår Calin
         p1Hp -= Random.Shared.Next(10, 25); // Calin slår Alex
 
-    Console.ReadLine();
+        Console.ReadLine();
     }
 
     if (p1Hp > 0)
@@ -37,6 +55,7 @@ static void Fight()
         Console.WriteLine($"{p2Name} vann!");
         Console.WriteLine($"{p2Name} Du fick 100xp!");
     }
+
 
 }
 Console.ReadLine();
